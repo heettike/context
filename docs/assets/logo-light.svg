@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 120" width="430" height="120" role="img" aria-label="context">
+  <!-- open ring: radius 34, stroke 19, mouth 84 degrees. the dot is now. -->
+  <path d="M 85.27 82.75 A 34 34 0 1 1 85.27 37.25" fill="none" stroke="#17181A" stroke-width="19" stroke-linecap="round"/>
+  <circle cx="94" cy="60" r="8.8" fill="#F26B3A"/>
+  <text x="128" y="78" font-family="-apple-system, 'SF Pro Display', 'Helvetica Neue', Inter, Arial, sans-serif" font-size="56" font-weight="700" letter-spacing="-2" fill="#17181A">context</text>
+</svg>

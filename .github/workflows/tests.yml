@@ -1,0 +1,81 @@
+name: tests
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  mac:
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      # the python that ships with the command line tools (3.9), which is all the readme asks for
+      - name: unit tests, system python
+        run: |
+          /usr/bin/python3 --version
+          /usr/bin/python3 -m unittest discover tests
+      - name: unit tests, the runner's newer python
+        run: |
+          python3 --version
+          python3 -m unittest discover tests
+      - name: doctor and collect on a mac with none of the apps
+        run: |
+          python3 -m ctx doctor
+          python3 -m ctx collect
+  # the nearest thing to "someone else's mac": clean machines we do not own, one of them intel, building the app from a fresh clone
+  fresh-mac:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15-intel, macos-15, macos-latest]      # the first is intel; the others are apple silicon
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: what this mac is
+        run: |
+          sw_vers
+          uname -m
+          /usr/bin/python3 --version
+          swiftc --version
+      - name: the engine as a new user meets it
+        run: |
+          /usr/bin/python3 -m ctx doctor
+          /usr/bin/python3 -m ctx collect
+          /usr/bin/python3 -m ctx mcp --status
+          /usr/bin/python3 -m ctx settings --fast > /dev/null
+          /usr/bin/python3 -m ctx connect --search notes > /dev/null
+      - name: a made-up archive, collected twice, must come out the same
+        run: /usr/bin/python3 scripts/collect_snapshot.py
+      - name: build the app from a fresh clone (ad hoc, no keychain) and lay out every screen
+        run: |
+          cd app
+          ./build.sh
+      - name: the app's own self tests, with nothing on screen
+        run: |
+          cd app
+          CTX_HOME="$RUNNER_TEMP/ctx" CONTEXT_DEBUG=1 build/context.app/Contents/MacOS/context --selftest
+      - name: keep the build log when something fails
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: build-log-${{ matrix.os }}
+          path: |
+            app/build/*.log
+          if-no-files-found: ignore
+  not-a-mac:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      # context is macos only. anywhere else it must say so in one line, not with a traceback
+      - name: one plain line, exit 1, nothing made on disk
+        run: |
+          out=$(python3 -m ctx doctor 2>&1) && code=0 || code=$?
+          echo "$out"
+          test "$code" -eq 1
+          test "$out" = "context reads mac apps and only runs on macos. (CTX_ANY_OS=1 skips this check.)"
+          test ! -e "$HOME/.context"
+      - name: the parts that do not need a mac
+        run: python3 -m unittest tests.test_scrub

@@ -1,0 +1,14 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  body { font: 13px -apple-system, system-ui, sans-serif; width: 270px; margin: 12px; color: #111; }
+  p { margin: 0 0 8px; } button { font: inherit; } ul { padding: 0; margin: 10px 0 0; list-style: none; }
+  li { display: flex; justify-content: space-between; margin: 4px 0; } small { color: #666; }
+</style>
+<p id="site"></p>
+<button id="toggle"></button>
+<p><small>context reads in the background, for the app on this mac only, with the sign-in this browser already has. it never clicks, types, sends or changes anything in your accounts. it may scroll a tab it reads, and some sites are read with a request that uses the post method. besides its built-in sources it reads only the sites you add here, and never one you marked.</small></p>
+<ul id="list"></ul>
+<p><small><label><input type="checkbox" id="dev"> let this mac reload me (only while you are changing the extension's code)</label></small></p>
+<script src="policy.js"></script>
+<script src="popup.js"></script>

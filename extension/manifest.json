@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "context",
+  "version": "0.7",
+  "description": "reads slack, google drive and x, and the sites you add, in the background, for the context app on this mac. read only. what it reads goes to the context app on this mac and nowhere else.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl2W8gpLvhOTAyCdiQJF4Jrud78Y7SV+xCdfXtzxX7/5kLnU25El2GOyMvIaIcve0aNwNIyxkEvNfpNwtwi3HEjhJF6YZBlUcHZTiYjETOMNlI/qkrdqEfIStwBLUZuy486i1hYjU2XgCKP1pX7Fm0lxj6+p4x6lNATlCkjoKs5jZcA/VMAYo4LQfVkY0AhfNYHnt6N8zKrDjbz9otK81EwV/oxEsk7oVdz3uW52783aXgck2UIzKKLt7EBVRXAq5bq9BE68GqhQJZJOPLW0oRFctsuo9on0lfp+LpI3vdAi662hR1gUEsuRlDQ4zAQ6v6wEoexmcMujHPCxPfuAujQIDAQAB",
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "nativeMessaging",
+    "scripting",
+    "alarms",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://app.slack.com/*",
+    "https://drive.google.com/*",
+    "https://docs.google.com/*",
+    "https://x.com/*"
+  ],
+  "action": {
+    "default_title": "context",
+    "default_popup": "popup.html"
+  },
+  "optional_host_permissions": [
+    "https://*/*"
+  ]
+}

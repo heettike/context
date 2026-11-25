@@ -1,0 +1,19 @@
+# the only packages context ever installs, and only for telegram (its api has no file to read).
+# every version is fixed and every file is named by its sha256, as pypi published it on 2026-11-24:
+#   python3 -m venv .venv && .venv/bin/pip install --require-hashes -r requirements-telegram.txt
+# pip refuses anything whose hash is not below, so a changed or look-alike upload is not installed.
+# to move to newer versions: change the numbers, take the new hashes from pypi.org/project/<name>/#files, and say so in the pull request.
+Telethon==1.46.0 \
+    --hash=sha256:c56e55e4a1f95fde556fe13459a542fc758e8ba501c0bf76f2fc5d8409fa81cb \
+    --hash=sha256:8357f5719376a9c1ddf0999136a44594a5b21b453647f1e146c169483b6a67df
+pyaes==1.6.1 \
+    --hash=sha256:02c1b1405c38d3c370b085fb952dd8bea3fadcee6411ad99f312cc129c536d8f
+rsa==4.9.1 \
+    --hash=sha256:68635866661c6836b8d39430f97a996acbd61bfa49406748ea243539fe239762 \
+    --hash=sha256:e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75
+pyasn1==0.6.5 \
+    --hash=sha256:4017b0fce125096b8573b39c989fdb1a4b19cf761e683398184550fea0e66587 \
+    --hash=sha256:6b11616a6bcf3a40e635f082bb232fa57b5e0dd7f517bd7ddd69ec3794508a47
+qrcode==8.2 \
+    --hash=sha256:16e64e0716c14960108e85d853062c9e8bba5ca8252c0b4d0231b9df4060ff4f \
+    --hash=sha256:35c3f2a4172b33136ab9f6b3ef1c00260dd2f66f858f24d88418a015f446506c

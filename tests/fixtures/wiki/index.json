@@ -1,0 +1,146 @@
+{
+ "v": 1,
+ "updated": "2025-08-03T10:00:00",
+ "pages": [
+  {
+   "id": "people/ravi-anand",
+   "title": "ravi anand",
+   "kind": "people",
+   "path": "people/ravi-anand.md",
+   "updated": "2025-08-03",
+   "words": 106,
+   "sources": {
+    "conversations": 1,
+    "rows": 3000
+   },
+   "summary": "the landlord of the harbour unit; two years of small talk around one lease.",
+   "order": 0
+  },
+  {
+   "id": "people/maya-okafor",
+   "title": "maya okafor",
+   "kind": "people",
+   "path": "people/maya-okafor.md",
+   "updated": "2025-08-03",
+   "words": 187,
+   "sources": {
+    "conversations": 3,
+    "rows": 22
+   },
+   "summary": "a neighbour who became the partner on the gazebo build, on three apps since 2025-03.",
+   "order": 1
+  },
+  {
+   "id": "people/ada-lovelace",
+   "title": "ada lovelace",
+   "kind": "people",
+   "path": "people/ada-lovelace.md",
+   "updated": "2025-08-03",
+   "words": 102,
+   "sources": {
+    "conversations": 1,
+    "rows": 14
+   },
+   "summary": "a close friend; kettles, funds and the occasional samovar.",
+   "order": 2
+  },
+  {
+   "id": "projects/kettle-fund",
+   "title": "kettle fund",
+   "kind": "projects",
+   "path": "projects/kettle-fund.md",
+   "updated": "2025-08-03",
+   "words": 73,
+   "sources": {
+    "conversations": 2,
+    "rows": 3
+   },
+   "summary": "a small fund for kettle makers, closing on a friday in 2025-06.",
+   "order": 0
+  },
+  {
+   "id": "projects/gazebo",
+   "title": "the gazebo",
+   "kind": "projects",
+   "path": "projects/gazebo.md",
+   "updated": "2025-08-03",
+   "words": 67,
+   "sources": {
+    "conversations": 1,
+    "rows": 23
+   },
+   "summary": "a gazebo built with a neighbour in spring 2025: permit, paint, photos.",
+   "order": 1
+  },
+  {
+   "id": "years/2024",
+   "title": "the year 2024",
+   "kind": "years",
+   "path": "years/2024.md",
+   "updated": "2025-08-03",
+   "words": 74,
+   "sources": {
+    "conversations": 2,
+    "rows": 1500
+   },
+   "summary": "the harbour lease renewed, and the first money into kettles.",
+   "order": 20240
+  },
+  {
+   "id": "years/2025",
+   "title": "the year 2025",
+   "kind": "years",
+   "path": "years/2025.md",
+   "updated": "2025-08-03",
+   "words": 100,
+   "sources": {
+    "conversations": 3,
+    "rows": 200
+   },
+   "summary": "a spring spent on a gazebo, pottery as rest, and the kettle fund closing.",
+   "order": 20250
+  },
+  {
+   "id": "themes/work",
+   "title": "how the owner works",
+   "kind": "themes",
+   "path": "themes/work.md",
+   "updated": "2025-08-03",
+   "words": 55,
+   "sources": {
+    "conversations": 2,
+    "rows": 14
+   },
+   "summary": "in numbered steps, reported as the owner goes; rest is pottery.",
+   "order": 1
+  },
+  {
+   "id": "themes/voice",
+   "title": "their voice, by audience",
+   "kind": "themes",
+   "path": "themes/voice.md",
+   "updated": "2025-08-03",
+   "words": 81,
+   "sources": {
+    "conversations": 2,
+    "rows": 6
+   },
+   "summary": "short, one thing per message; plans with friends in whichever language the friend writes.",
+   "order": 12
+  },
+  {
+   "id": "front",
+   "title": "portrait",
+   "kind": "front",
+   "path": "front.md",
+   "updated": "2025-08-03",
+   "words": 376,
+   "sources": {
+    "conversations": 3,
+    "rows": 9
+   },
+   "summary": "the owner funds kettle makers, rents a unit by the harbour, and rests by throwing pots.",
+   "order": 0
+  }
+ ]
+}
